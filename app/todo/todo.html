@@ -1,0 +1,22 @@
+<div class="col-lg-6" ng-controller="ToDoCtrl as ctrl">
+    <div class="panel panel-primary">
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title pull-left">To-do List</h3>
+            <input type="text" style="width: 300px;" class="form-control pull-right" placeholder="Search"/>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <tr ng-repeat="todo in ctrl.todoList">
+                    <td><input type="checkbox" checked/> </td>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.description}}</td>
+                    <td>{{todo.priority}}</td>
+                    <td>{{todo.isCompleted?'Completed':'Pending'}}</td>
+                    <td>{{todo.dateCreated.toLocaleDateString()}}</td>
+                    <!--<td><input type="checkbox"  </td>-->
+                    <button ng-click="ctrl.remove(todo.$index)" class="btn btn-sm btn-danger">x</button>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

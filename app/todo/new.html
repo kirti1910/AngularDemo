@@ -1,0 +1,32 @@
+<div class="col-lg-6" ng-controller="NewTodoCtrl as ctrl">
+    <form name="createTodo" ng-submit="ctrl.addNew(ctrl.todo)">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">I need to...</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <input name="title" ng-model="ctrl.todo.title" class="form-control" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <input name="description"  ng-model="ctrl.todo.description" class="form-control" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <select name="priority" class="form-control" placeholder="Select Priority" ng-model="ctrl.todo.priority">
+                        <option value="Major">Major</option>
+                        <option value="Minor">Minor</option>
+                        <option value="Blocker">Blocker</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="status" class="form-control" placeholder="Select Priority" ng-model="ctrl.todo.status">
+                        <option value="false">Pending</option>
+                        <option value="true">Completed</option>
+                    </select>
+                </div>
+                <input type="submit" class="btn btn-success" value="Create"/>
+                <button ui-sref="todo" class="btn btn-warning"> Back</button>
+            </div>
+        </div>
+    </form>
+</div>
